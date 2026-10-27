@@ -1,0 +1,24 @@
+openapi: 3.0.3
+
+info:
+  title: Simple Booking API
+  version: 1.0.0
+
+servers:
+  - url: https://restful-booker.herokuapp.com
+
+paths:
+  /booking/{id}:
+    get:
+      summary: Get booking
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '404':
+          description: Booking not found
